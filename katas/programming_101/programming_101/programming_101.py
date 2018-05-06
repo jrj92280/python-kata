@@ -19,20 +19,21 @@ print('Hello, world!')
   PRACTICE: Print a string to the console
 """
 
+print('peppers')
 """
   bool - boolean
   True/False
 
   PRACTICE: Print a boolean value to the console
 """
-
+print(80 == 80)
 """
   int - integer
   0
 
   PRACTICE: Print a int to the console
 """
-
+print(7)
 """
   float - decimal
   0.0
@@ -40,6 +41,7 @@ print('Hello, world!')
   PRACTICE: Print a float to the console
 """
 
+print(.09)
 # -----------------
 # COMPLEX DATA TYPES
 # -----------------
@@ -50,14 +52,14 @@ print('Hello, world!')
 
   PRACTICE: Create a list that contains the names of three people
 """
-
+names = ['Jason', 'Justin', 'Josh']
 """
   dict
-  {}, {'key', 'value}
+  {}, {'key':v, 'value}
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
-
+genders = {'Jason': 'male'}
 # -----------------
 # CASTING
 # -----------------
@@ -74,6 +76,12 @@ print('Hello, world!')
             4. Cast any non-empty string value to a boolean to output True
             5. Cast the result of 3/2 to a float values to produce an output of 1.5
 """
+print(str(1) + str(1))
+print(1 + int('1'))
+
+print(bool(''))
+print(bool([None]))
+
 
 # -----------------
 # SCOPE
