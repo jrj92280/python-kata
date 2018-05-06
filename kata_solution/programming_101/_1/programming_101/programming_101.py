@@ -18,6 +18,7 @@ print('Hello, world!')
 
   PRACTICE: Print a string to the console
 """
+print('eateggs')
 
 """
   bool - boolean
@@ -25,6 +26,10 @@ print('Hello, world!')
 
   PRACTICE: Print a boolean value to the console
 """
+print(10 > 5)
+print(True)
+print(10 < 5)
+print(False)
 
 """
   int - integer
@@ -32,6 +37,8 @@ print('Hello, world!')
 
   PRACTICE: Print a int to the console
 """
+print(1)
+print(-1)
 
 """
   float - decimal
@@ -40,23 +47,49 @@ print('Hello, world!')
   PRACTICE: Print a float to the console
 """
 
+count = 0
+
+print("!!!" + str(count))
+
+count = count + 1
+
+count = count + .8 + 1 + int("1")
+print("!!!" + str(count))
+
+print(.8 + 1 + int("1"))
+print(4.5)
 # -----------------
 # COMPLEX DATA TYPES
 # -----------------
 
+print("!!!!!!!!!!!!!!!!!!!!!!!!!!")
 """
   list
   [], ['word']
 
   PRACTICE: Create a list that contains the names of three people
 """
+my_list = ['Justin', 'Jason', "Josh", 'Candace']
+print(my_list[0])
+print('**************')
 
 """
   dict
-  {}, {'key', 'value}
+  {}, {'key': 'value', 'key2': 'value2'}
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
+
+my_dict = {
+    'Justin': 'male',
+    'Jason': 'male',
+    "Josh": 'male',
+    'Candace': 'female'
+}
+print(my_dict['Justin'] + ":" + my_dict['Candace'])
+
+# for key in my_dict:
+#     print(key + '-' + my_dict[key])
 
 # -----------------
 # CASTING
@@ -74,6 +107,8 @@ print('Hello, world!')
             4. Cast any non-empty string value to a boolean to output True
             5. Cast the result of 3/2 to a float values to produce an output of 1.5
 """
+print('1' + str(1))  # '11'
+print(1 + int('1'))
 
 # -----------------
 # SCOPE
