@@ -17,9 +17,10 @@ TDD : Test Driven Development
 """
 
 """
+
 **There are some rules to a Roman number:**
-- Numerals can be concatenated to form a larger numeral (“XX” + “II” = “XXII”)
-- If a lesser numeral is put before a bigger it means subtraction of the lesser from the bigger (“IV” means four, “CM” means ninehundred)
+- If a lesser numeral is put before a bigger it means subtraction of the lesser from the bigger 
+      (“IV” means four, “CM” means ninehundred)
 - If the numeral is I, X or C you can’t have more than three (“II” + “II” = “IV”)
 - If the numeral is V, L or D you can’t have more than one (“D” + “D” = “M”)
 """
@@ -27,29 +28,30 @@ TDD : Test Driven Development
 from katas.roman_calculator.roman_calculator import roman_calculator
 
 
-def test_zero():
-    assert 0 == roman_calculator("")
+def test_numerals():
+    test_cases = [
+        ("", 0),
+        ("I", 1),
+        ("II", 2),
+        ("III", 3),
+        ("V", 5),
+        ("VI", 6),
+        ("X", 10),
+        ("L", 50),
+        ("C", 100),
+        ("D", 500),
+        ("M", 1000),
+        ("XVI", 16),
+    ]
+
+    for roman_numeral_list, expected_value in test_cases:
+        assert expected_value == roman_calculator(roman_numeral_list)
 
 
-def test_one():
-    assert 1 == roman_calculator("I")
+def test_subtraction():
+    test_cases = [
+        ("IV", 4), ("IM", 999), ("IMX", 1009)
+    ]
 
-
-def test_two():
-    assert 2 == roman_calculator("II")
-
-
-def test_three():
-    assert 3 == roman_calculator("III")
-
-
-def test_five():
-    assert 5 == roman_calculator("V")
-
-
-def test_six():
-    assert 6 == roman_calculator("VI")
-
-
-def test_ten():
-    assert 10 == roman_calculator("X")
+    for roman_numeral_list, expected_value in test_cases:
+        assert expected_value == roman_calculator(roman_numeral_list)
