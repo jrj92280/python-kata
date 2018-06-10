@@ -18,6 +18,7 @@ print('Hello, world!')
 
   PRACTICE: Print a string to the console
 """
+print('Hello, world!')
 
 """
   bool - boolean
@@ -26,12 +27,15 @@ print('Hello, world!')
   PRACTICE: Print a boolean value to the console
 """
 
+print(bool(1 < 2))
+
 """
   int - integer
   0
 
   PRACTICE: Print a int to the console
 """
+print(1)
 
 """
   float - decimal
@@ -39,6 +43,8 @@ print('Hello, world!')
 
   PRACTICE: Print a float to the console
 """
+
+print(1.5)
 
 # -----------------
 # COMPLEX DATA TYPES
@@ -50,13 +56,31 @@ print('Hello, world!')
 
   PRACTICE: Create a list that contains the names of three people
 """
+fish = ["bass", "blue_gile", "flounder"]
 
 """
   dict
-  {}, {'key': 'value}
+  {}, {'key': 'value'}
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
+
+# dict= {"player": 'name' + "gender" + 'age'}
+players = {
+    "player":
+        ['name', "gender", 'age'],
+    "jason":
+        ["jason", "male", "22"],
+    'justin':
+        ["justin", "male", "22"],
+    'boopers':
+        ["josh", 'male', "42"]
+
+}
+print(players)
+print(players["jason"])
+
+
 
 # -----------------
 # CASTING
