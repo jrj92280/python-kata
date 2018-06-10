@@ -80,6 +80,11 @@ players = {
 print(players)
 print(players["jason"])
 
+for nick_name in players:
+    print(nick_name)
+    print("name:" + players[nick_name][0])
+    print("age:" + players[nick_name][2])
+
 
 
 # -----------------
@@ -102,7 +107,7 @@ print(players["jason"])
 # -----------------
 # SCOPE
 # -----------------
-# white space in Python defines scope
+# white space in Python defines scope:
 #     block of code associated with a control structure
 
 # -----------------
