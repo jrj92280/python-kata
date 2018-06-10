@@ -26,7 +26,6 @@ for key in found_words_dict:
     if found_words_dict[key] == 1:
         print(key)
 
-
 for word in words:
     # words
     if word not in found_words:
