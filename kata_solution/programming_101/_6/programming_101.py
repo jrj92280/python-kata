@@ -18,6 +18,7 @@ print('Hello, world!')
 
   PRACTICE: Print a string to the console
 """
+print('Hello, world!')
 
 """
   bool - boolean
@@ -26,12 +27,15 @@ print('Hello, world!')
   PRACTICE: Print a boolean value to the console
 """
 
+print(bool(1 < 2))
+
 """
   int - integer
   0
 
   PRACTICE: Print a int to the console
 """
+print(1)
 
 """
   float - decimal
@@ -39,6 +43,8 @@ print('Hello, world!')
 
   PRACTICE: Print a float to the console
 """
+
+print(1.5)
 
 # -----------------
 # COMPLEX DATA TYPES
@@ -50,6 +56,7 @@ print('Hello, world!')
 
   PRACTICE: Create a list that contains the names of three people
 """
+fish = ["bass", "blue_gile", "flounder"]
 
 """
   dict
@@ -57,6 +64,26 @@ print('Hello, world!')
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
+
+# dict= {"player": 'name' + "gender" + 'age'}
+players = {
+    "player":
+        ['name', "gender", 'age'],
+    "jason":
+        ["jason", "male", "22"],
+    'justin':
+        ["justin", "male", "22"],
+    'boopers':
+        ["josh", 'male', "42"]
+
+}
+print(players)
+print(players["jason"])
+
+for nick_name in players:
+    print(nick_name)
+    print("name:" + players[nick_name][0])
+    print("age:" + players[nick_name][2])
 
 # -----------------
 # CASTING
@@ -75,10 +102,20 @@ print('Hello, world!')
             5. Cast the result of 3/2 to a float values to produce an output of 1.5
 """
 
+x = 1
+y = "7"
+
+print(y + str(x))
+print(int(y) + x)
+
+z = [9, 2]
+a = [5, 8, 3]
+print(a + z)
+
 # -----------------
 # SCOPE
 # -----------------
-# white space in Python defines scope
+# white space in Python defines scope:
 #     block of code associated with a control structure
 
 # -----------------
@@ -91,7 +128,6 @@ print('Hello, world!')
 
   PRACTICE: Create a variable with a name of your choosing that contains the value 'hello'
 """
-
 
 # --comparisons--
 # ==     -> equals
@@ -114,7 +150,6 @@ print('Hello, world!')
                 if true print 'hello', else print 'bye'
 """
 
-
 """
 --for loops--
 for {variable_name} in <collection>:
@@ -122,7 +157,6 @@ for {variable_name} in <collection>:
 
   PRACTICE: print each letter in a given string
 """
-
 
 """
 Functions
