@@ -104,6 +104,18 @@ for nick_name in players:
             5. Cast the result of 3/2 to a float values to produce an output of 1.5
 """
 
+x = 1
+y = "7"
+
+print(y + str(x))
+print(int(y) + x)
+
+z = [9, 2]
+a = [5, 8, 3]
+print(a + z)
+
+
+
 # -----------------
 # SCOPE
 # -----------------
