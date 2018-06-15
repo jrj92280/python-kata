@@ -27,11 +27,27 @@
 
 saying = "don't panic!"
 letters = list(saying)
-letters
-['d','o','n',"'",'t','p','a','n','i','c','!']
+letters =['d','o','n',"'",'t','p','a','n','i','c','!']
+print (saying)
+print (letters)
+#backwards_letters =letters[::-1]
+#print (backwards_letters)
+tip = letters[4:9]
+# tpani
+
+tip.pop(2)
+# tpni
+
+tip.pop(2)
+# tpi
 
 
-
+## TPI
+## TP  x=I
+## insert(2,x)
+pop_value = tip.pop(1)
+tip.insert(2, pop_value)
+print (tip)
 first = letters[0]
 last = letters[-1]
 
