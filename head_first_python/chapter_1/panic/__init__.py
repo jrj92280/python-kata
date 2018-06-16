@@ -25,6 +25,7 @@
 ##print (plist)
 ##print (new_phrase
 
+
 ###saying = "don't panic!"
 ###letters = list(saying)
 ###letters =['d','o','n',"'",'t','p','a','n','i','c','!']
@@ -66,5 +67,10 @@ plist.remove("'")
 plist.extend([plist.pop(), plist.pop()])
 plist.insert(2, plist.pop(3))
 new_phrase = ''.join(plist)
+print(plist)
+print(new_phrase)
+
+new_phrase = ''.join(plist[1:3])
+new_phrase = new_phrase + ''.join([plist[5], plist[4], plist[7], plist[6]])
 print(plist)
 print(new_phrase)
