@@ -1,4 +1,4 @@
-from chess_game.board import make_board
+from chess_game_practice.board import make_board
 
 
 def test_make_board():
