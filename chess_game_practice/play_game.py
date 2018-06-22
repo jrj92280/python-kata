@@ -4,7 +4,7 @@ from chess_game_practice.board import make_board
 from chess_game_practice.chess_game import ChessGame
 
 
-def game_event_loop(chess_game, player1_name, player2_name, player_moves):
+def game_event_loop(chess_game):
     current_move_number = 1
     _moves = [copy.deepcopy(chess_game.board)]
 
@@ -12,9 +12,9 @@ def game_event_loop(chess_game, player1_name, player2_name, player_moves):
         print(chess_game)
 
         if current_move_number % 2 == 1:
-            current_player_name = player1_name
+            current_player_name = chess_game.player_one
         else:
-            current_player_name = player2_name
+            current_player_name = chess_game.player_two
         print('Player: ' + current_player_name)
 
         game_text = '\n\nMake A Move (x,y,x2,y2): '
@@ -34,26 +34,39 @@ def game_event_loop(chess_game, player1_name, player2_name, player_moves):
         current_move_number = current_move_number + 1
 
 
-def get_user_input(text):
+def get_user_input(text, is_move=True):
     while True:
-        user_move = input(text)
+        user_input = input(text)
 
-        if user_move == 'undo':
-            return user_move
-
-        user_move = user_move.split(",")
-        if len(user_move) != 4:
-            print('invalid move')
+        command = parse_command(user_input, is_move=is_move)
+        if not command:
             continue
+
+        return command
+
+
+def parse_command(command, is_move=True):
+    if not command:
+        return False
+
+    if command == 'undo':
+        return command
+
+    if is_move:
+        command = command.split(",")
+        if len(command) != 4:
+            print('invalid move')
+            return False
         try:
-            for move in user_move:
+            for move in command:
                 if int(move) < 0 or int(move) > 7:
                     raise Exception()
         except:
             print("can't move there")
-            continue
+            return False
 
-        return user_move
+    return command
+
 
 
 if __name__ == "__main__":
@@ -65,16 +78,11 @@ if __name__ == "__main__":
     print("   : x = row number 1 though 8")
     print("   : y = column number 1 though 8")
 
-    player1_name = input(' : Enter player one name')
-    player2_name = input(' : Enter player two name')
-
-    moves = {
-        player1_name: list(),
-        player2_name: list()
-    }
+    player1_name = get_user_input(' : Enter player one name', is_move=False)
+    player2_name = get_user_input(' : Enter player two name', is_move=False)
 
     print('------------------------------------------------')
 
-    chess_game = ChessGame(game_board)
+    chess_game = ChessGame(game_board, player1_name, player2_name)
 
-    game_event_loop(chess_game, player1_name, player2_name, moves)
+    game_event_loop(chess_game)
