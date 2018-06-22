@@ -1,6 +1,8 @@
 class ChessGame:
-    def __init__(self, board):
+    def __init__(self, board, player_one, player_two):
         self.board = board
+        self.player_one = player_one
+        self.player_two = player_two
 
     def __str__(self):
         return "\n".join([str(row) for row in self.board])
@@ -14,4 +16,4 @@ class ChessGame:
         tx = target_position[0]
 
         self.board[ty][tx] = piece
-        self.board[cy][cx] = '#'
+        self.board[cy][cx] = '##'
