@@ -15,5 +15,5 @@ class ChessGame:
         ty = target_position[1]
         tx = target_position[0]
 
-        self.board[ty][tx] = piece
         self.board[cy][cx] = '##'
+        self.board[ty][tx] = piece

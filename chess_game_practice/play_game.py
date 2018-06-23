@@ -2,6 +2,7 @@ import copy
 
 from chess_game_practice.board import make_board
 from chess_game_practice.chess_game import ChessGame
+from chess_game_practice.commands.move_command import MoveCommand
 
 
 def game_event_loop(chess_game):
@@ -24,9 +25,13 @@ def game_event_loop(chess_game):
             current_move_number = current_move_number - 1
             chess_game.board = _moves[current_move_number - 1]
             continue
+
+        move_command = MoveCommand(move)
+        command = move_command.parse()
+
         # calculate current and target postition
-        current_position = [int(move[0]), int(move[1])]
-        target_position = [int(move[2]), int(move[3])]
+        current_position = command[1][0]
+        target_position = command[1][1]
 
         # move the piece
         chess_game.move_piece(current_position, target_position)
@@ -38,11 +43,11 @@ def get_user_input(text, is_move=True):
     while True:
         user_input = input(text)
 
-        command = parse_command(user_input, is_move=is_move)
-        if not command:
-            continue
+        # command = parse_command(user_input, is_move=is_move)
+        # if not command:
+        #     continue
 
-        return command
+        return user_input
 
 
 def parse_command(command, is_move=True):
