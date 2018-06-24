@@ -6,6 +6,7 @@ multiline comment
 """
 
 # in PyCharm, right click and select run 'programming_101' to execute
+import random
 
 print('Hello, world!')
 
@@ -18,21 +19,23 @@ print('Hello, world!')
 
   PRACTICE: Print a string to the console
 """
-
+print('Jason')
 """
   bool - boolean
   True/False
 
   PRACTICE: Print a boolean value to the console
 """
-
+print(5 > 6)
+print(5 < 6)
 """
   int - integer
   0
 
   PRACTICE: Print a int to the console
 """
-
+print(1)
+print(-1)
 """
   float - decimal
   0.0
@@ -43,20 +46,35 @@ print('Hello, world!')
 # -----------------
 # COMPLEX DATA TYPES
 # -----------------
-
+print(1.8567)
 """
   list
   [], ['word']
 
   PRACTICE: Create a list that contains the names of three people
 """
-
+brothers = ["Jason", "Justin", "Josh"]
+print(brothers)
 """
   dict
   {}, {'key': 'value'}
 
   PRACTICE: Create a dictionary that is name as a key and gender as the value
 """
+cards = {
+    'A': ['spades', 'clubs', 'hearts', 'dimonds'],
+    'K': ['spades', 'clubs', 'hearts', 'dimonds'],
+    'Q': ['spades', 'clubs', 'hearts', 'dimonds'],
+    'J': ['spades', 'clubs', 'hearts', 'dimonds'],
+    '10': ['spades', 'clubs', 'hearts', 'dimonds'],
+
+}
+face_values = list(cards.keys())
+face_value = face_values[random.randint(0, 4)]
+card = cards[face_value][random.randint(0, 3)]
+print(face_value + ' ' + card)
+# for _ in range (20):
+#     print(random.randint(0,4))
 
 # -----------------
 # CASTING
