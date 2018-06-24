@@ -14,6 +14,9 @@ def test_create_chess_game():
     assert player_one == chess_game.player_one
     assert player_two == chess_game.player_two
 
+    assert chess_game.board is not chess_game.moves[0]
+    assert chess_game.board == chess_game.moves[0]
+
 
 def test_move_piece():
     board = make_board()

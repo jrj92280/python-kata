@@ -1,5 +1,6 @@
 class MoveCommand:
-    def __init__(self, command):
+    def __init__(self, chess_game, command):
+        self.chess_game = chess_game
         self.command = command
         self.name = 'move'
 

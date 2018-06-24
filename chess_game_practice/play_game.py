@@ -7,7 +7,7 @@ from chess_game_practice.commands.move_command import MoveCommand
 
 def game_event_loop(chess_game):
     current_move_number = 1
-    _moves = [copy.deepcopy(chess_game.board)]
+    _moves = chess_game.moves
 
     while True:
         print(chess_game)
@@ -26,7 +26,7 @@ def game_event_loop(chess_game):
             chess_game.board = _moves[current_move_number - 1]
             continue
 
-        move_command = MoveCommand(move)
+        move_command = MoveCommand(chess_game, move)
         command = move_command.parse()
 
         # calculate current and target postition
@@ -35,6 +35,7 @@ def game_event_loop(chess_game):
 
         # move the piece
         chess_game.move_piece(current_position, target_position)
+
         _moves.append(copy.deepcopy(chess_game.board))
         current_move_number = current_move_number + 1
 
