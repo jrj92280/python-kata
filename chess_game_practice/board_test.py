@@ -18,7 +18,7 @@ def test_game_board_has_pawns():
 
 
 def test_game_board_has_empty_spaces():
-    empty_row = ["#" for _ in range(0, 8)]
+    empty_row = ["##" for _ in range(0, 8)]
 
     board = make_board()
 
@@ -29,7 +29,7 @@ def test_game_board_has_empty_spaces():
 
 
 def test_game_board_has_white_pieces():
-    white_pieces = ["R", "H", "B", "K", "Q", "B", "H", "R"]
+    white_pieces = ["WR", "WH", "WB", "WK", "WQ", "WB", "WH", "WR"]
 
     board = make_board()
 
@@ -37,7 +37,7 @@ def test_game_board_has_white_pieces():
 
 
 def test_game_board_has_black_pieces():
-    black_pieces = ["R", "H", "B", "Q", "K", "B", "H", "R"]
+    black_pieces = ["BR", "BH", "BB", "BQ", "BK", "BB", "BH", "BR"]
 
     board = make_board()
 

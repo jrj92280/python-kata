@@ -10,14 +10,14 @@ def make_board():
             elif row_index == 6:
                 row.append("BP")
             else:
-                row.append("#")
+                row.append("##")
 
         game_board.append(row)
 
-    white_pieces = ["R", "H", "B", "K", "Q", "B", "H", "R"]
+    white_pieces = ["WR", "WH", "WB", "WK", "WQ", "WB", "WH", "WR"]
     game_board[0] = white_pieces
 
-    black_pieces = ["R", "H", "B", "Q", "K", "B", "H", "R"]
+    black_pieces = ["BR", "BH", "BB", "BQ", "BK", "BB", "BH", "BR"]
     game_board[7] = black_pieces
     # print("\n".join([str(row) for row in game_board]))
 

@@ -1,38 +1,78 @@
+import copy
+
 from chess_game_practice.board import make_board
 from chess_game_practice.chess_game import ChessGame
+from chess_game_practice.commands.move_command import MoveCommand
 
 
 def game_event_loop(chess_game):
     current_move_number = 1
+    _moves = chess_game.moves
 
     while True:
         print(chess_game)
 
-        print('Player: ' + str(current_move_number % 2))
+        if current_move_number % 2 == 1:
+            current_player_name = chess_game.player_one
+        else:
+            current_player_name = chess_game.player_two
+        print('Player: ' + current_player_name)
+
         game_text = '\n\nMake A Move (x,y,x2,y2): '
         move = get_user_input(game_text)
-        current_position = [int(move[0]), int(move[1])]
-        target_position = [int(move[2]), int(move[3])]
+
+        if move == 'undo':
+            current_move_number = current_move_number - 1
+            chess_game.board = _moves[current_move_number - 1]
+            continue
+
+        move_command = MoveCommand(chess_game, move)
+        command = move_command.parse()
+
+        # calculate current and target postition
+        current_position = command[1][0]
+        target_position = command[1][1]
+
+        # move the piece
         chess_game.move_piece(current_position, target_position)
+
+        _moves.append(copy.deepcopy(chess_game.board))
         current_move_number = current_move_number + 1
 
 
-def get_user_input(text):
+def get_user_input(text, is_move=True):
     while True:
-        user_move = input(text)
-        user_move = user_move.split(",")
-        if len(user_move) != 4:
+        user_input = input(text)
+
+        # command = parse_command(user_input, is_move=is_move)
+        # if not command:
+        #     continue
+
+        return user_input
+
+
+def parse_command(command, is_move=True):
+    if not command:
+        return False
+
+    if command == 'undo':
+        return command
+
+    if is_move:
+        command = command.split(",")
+        if len(command) != 4:
             print('invalid move')
-            continue
+            return False
         try:
-            for move in user_move:
+            for move in command:
                 if int(move) < 0 or int(move) > 7:
                     raise Exception()
         except:
             print("can't move there")
-            continue
+            return False
 
-        return user_move
+    return command
+
 
 
 if __name__ == "__main__":
@@ -43,14 +83,12 @@ if __name__ == "__main__":
     print('   : input - piece''s position x,y, second x,y = destination')
     print("   : x = row number 1 though 8")
     print("   : y = column number 1 though 8")
-    player1_name = input(' : Enter player one name')
-    player2_name = input(' : Enter player two name')
-    moves = {
-        player1_name: list(),
-        player2_name: list()
-    }
+
+    player1_name = get_user_input(' : Enter player one name', is_move=False)
+    player2_name = get_user_input(' : Enter player two name', is_move=False)
+
     print('------------------------------------------------')
 
-    chess_game = ChessGame(game_board)
+    chess_game = ChessGame(game_board, player1_name, player2_name)
 
     game_event_loop(chess_game)
