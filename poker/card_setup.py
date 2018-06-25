@@ -6,7 +6,6 @@ cards = ['A, spades','A, clubs', 'A, hearts', 'A, dimonds', 'K, spades','K, club
         '6, spades','6, clubs', '6, hearts', '6, dimonds','5, spades','5, clubs', '5, hearts', '5, dimonds',
         '4, spades','4, clubs', '4, hearts', '4, dimonds','3, spades','3, clubs', '3, hearts', '3, dimonds',
         '2, spades','2, clubs', '2, hearts', '2, dimonds']
-game = cards = random.randit + cards
-game = cards[3]
 
-print (game)
+random.shuffle(cards)
+print (cards)
