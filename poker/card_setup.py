@@ -1,4 +1,7 @@
 import random
+
+
+
 cards = ['A, spades','A, clubs', 'A, hearts', 'A, dimonds', 'K, spades','K, clubs', 'K, hearts', 'K, dimonds',
         'Q, spades','Q, clubs', 'Q, hearts', 'Q, dimonds','J, spades','J, clubs', 'J, hearts', 'J, dimonds',
         '10, spades','10, clubs', '10, hearts', '10, dimonds','9, spades','9, clubs', '9, hearts', '9, dimonds',
@@ -9,3 +12,5 @@ cards = ['A, spades','A, clubs', 'A, hearts', 'A, dimonds', 'K, spades','K, club
 
 random.shuffle(cards)
 print (cards)
+
+
