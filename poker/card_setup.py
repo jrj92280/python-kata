@@ -9,6 +9,7 @@ for player in range(player_count):
     player_name = input('name:')
     player_names.append(player_name)
 
+
 cards = ['A, spades', 'A, clubs', 'A, hearts', 'A, dimonds',
          'K, spades', 'K, clubs', 'K, hearts', 'K, dimonds',
          'Q, spades', 'Q, clubs', 'Q, hearts', 'Q, dimonds',
