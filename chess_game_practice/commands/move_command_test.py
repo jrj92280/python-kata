@@ -1,7 +1,6 @@
 from chess_game_practice.chess_game import ChessGame
 from chess_game_practice.commands.move_command import MoveCommand
 
-
 def test_create_move_command():
     command = "1234"
     chess_game = ChessGame(None, None, None)
