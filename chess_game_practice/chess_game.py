@@ -7,6 +7,7 @@ class ChessGame:
         self.player_one = player_one
         self.player_two = player_two
         self.moves = [copy.deepcopy(board)]
+        self.current_move_number = 1
 
     def __str__(self):
         return "\n".join([str(row) for row in self.board])

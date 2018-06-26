@@ -16,7 +16,7 @@ def test_create_chess_game():
 
     assert chess_game.board is not chess_game.moves[0]
     assert chess_game.board == chess_game.moves[0]
-
+    assert chess_game.current_move_number == 1
 
 def test_move_piece():
     board = make_board()

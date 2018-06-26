@@ -3,16 +3,16 @@ import copy
 from chess_game_practice.board import make_board
 from chess_game_practice.chess_game import ChessGame
 from chess_game_practice.commands.move_command import MoveCommand
+from chess_game_practice.commands.undo_command import UndoCommand
 
 
 def game_event_loop(chess_game):
-    current_move_number = 1
     _moves = chess_game.moves
 
     while True:
         print(chess_game)
 
-        if current_move_number % 2 == 1:
+        if chess_game.current_move_number % 2 == 1:
             current_player_name = chess_game.player_one
         else:
             current_player_name = chess_game.player_two
@@ -21,9 +21,8 @@ def game_event_loop(chess_game):
         game_text = '\n\nMake A Move (x,y,x2,y2): '
         move = get_user_input(game_text)
 
-        if move == 'undo':
-            current_move_number = current_move_number - 1
-            chess_game.board = _moves[current_move_number - 1]
+        undo_command = UndoCommand(chess_game, move)
+        if undo_command.parse():
             continue
 
         move_command = MoveCommand(chess_game, move)
@@ -37,7 +36,7 @@ def game_event_loop(chess_game):
         chess_game.move_piece(current_position, target_position)
 
         _moves.append(copy.deepcopy(chess_game.board))
-        current_move_number = current_move_number + 1
+        chess_game.current_move_number = chess_game.current_move_number + 1
 
 
 def get_user_input(text, is_move=True):

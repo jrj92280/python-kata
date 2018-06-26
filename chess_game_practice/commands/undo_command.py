@@ -7,9 +7,7 @@ class UndoCommand:
     def parse(self):
         if self.command != self.name:
             return False
-        # current_position = (int(self.command[0]), int(self.command[1]))
-        # target_position = (int(self.command[2]), int(self.command[3]))
-        #
-        # return_value = (self.name, (current_position, target_position))
-        # return return_value
-        pass
+
+        self.chess_game.current_move_number = self.chess_game.current_move_number - 1
+        self.chess_game.board = self.chess_game.moves[self.chess_game.current_move_number - 1]
+        return True
