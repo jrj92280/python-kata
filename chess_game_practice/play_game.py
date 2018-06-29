@@ -73,9 +73,37 @@ def parse_command(command, is_move=True):
     return command
 
 
+class Piece:
+    def __init__(self, x, y, color, piece_type, board):
+        self.board = board
+        self.x = x
+        self.y = y
+        self.color = color
+        self.piece_type = piece_type
+        self.has_moved = False
+
+    def move(self):
+        self.has_moved = True
+        return self._move()
+
+    def _move(self):
+        raise NotImplemented
+
+
+class Pawn(Piece):
+    def _move(self):
+        print(self.x + self.y)
+
+
 
 if __name__ == "__main__":
     game_board = make_board()
+    pawn = Pawn('x', 'y', None, None, None)
+    pawn.move()
+
+    a_list = MyList(["a", "b"])
+    a_list.append("x")
+    print(a_list.pop())
 
     print('Chess')
     print(' : Rules')
