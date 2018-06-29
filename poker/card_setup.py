@@ -22,12 +22,12 @@ cards = ['A, spades', 'A, clubs', 'A, hearts', 'A, dimonds',
          '5, spades', '5, clubs', '5, hearts', '5, dimonds',
          '4, spades', '4, clubs', '4, hearts', '4, dimonds',
          '3, spades', '3, clubs', '3, hearts', '3, dimonds',
-        '2, spades','2, clubs', '2, hearts', '2, dimonds']
+         '2, spades', '2, clubs', '2, hearts', '2, dimonds']
 
-deck = set(itertools.product(cards))
-drawn_cards = random.sample(deck, (5 + 2 * player_count))
+cards_needed = 2
 
-players = []
-player
 random.shuffle(cards)
-print (cards)
+for card in cards[:cards_needed]:
+        print(card)
+
+
