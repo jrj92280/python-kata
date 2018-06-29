@@ -6,7 +6,7 @@ player_count = int(input("How many players? "))
 player_names = []
 
 for player in range(player_count):
-    player_name = input('name:')
+    player_name = input['name:']
     player_names.append(player_name)
 
 
@@ -25,10 +25,12 @@ cards = ['A, spades', 'A, clubs', 'A, hearts', 'A, dimonds',
          '2, spades', '2, clubs', '2, hearts', '2, dimonds']
 
 cards_needed = 2
-
 random.shuffle(cards)
-cards.pop(-1)
-for card in cards[:cards_needed]:
-        print(card)
+card = cards.pop
+cards.pop()
+player_name.append[[player_name,card]:
+
+
+print(player_names,cards)
 
 
