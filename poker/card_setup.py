@@ -27,6 +27,7 @@ cards = ['A, spades', 'A, clubs', 'A, hearts', 'A, dimonds',
 cards_needed = 2
 
 random.shuffle(cards)
+cards.pop(-1)
 for card in cards[:cards_needed]:
         print(card)
 
