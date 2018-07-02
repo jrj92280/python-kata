@@ -22,3 +22,9 @@ def make_board():
     # print("\n".join([str(row) for row in game_board]))
 
     return game_board
+
+
+def _make_board_empty():
+    game_board = [list("##" for _ in range(8)) for column in range(8)]
+
+    return game_board
