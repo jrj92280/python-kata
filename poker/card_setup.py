@@ -1,13 +1,16 @@
 import random
 
-player_count = int(input("How many players? "))
 
 player_names = []
 
+player_count = 2  # int(input("How many players? "))
 
-for player in range(player_count):
-    player_name = input('name:')
-    player_names.append([player_name, []])
+# for player in range(player_count):
+#     player_name = input('name:')
+#     player_names.append([player_name, []])
+
+player_names.append(["jj", []])
+player_names.append(["jk", []])
 
 deck = ['A, spades', 'A, clubs', 'A, hearts', 'A, dimonds',
          'K, spades', 'K, clubs', 'K, hearts', 'K, dimonds',
@@ -44,19 +47,25 @@ for player in player_names:
     print(player[0])
     print(player[1])
 
-# NEXT: burn a card with pop
+burn_card = deck.pop()
 
-# NEXT: create list for turned cards
+card_1 = deck.pop()
+card_2 = deck.pop()
+card_3 = deck.pop()
 
-# NEXT: pop three into turned cards
+flop = [card_1, card_2, card_3]
+print(flop)
 
-# NEXT: burn card
+burn_card_2 = deck.pop()
 
-# NEXT: pop card into turned cards
+# flop.append( deck.pop())
+flop = flop + [deck.pop()]
 
-# NEXT: burn card
+burn_card_3 = deck.pop()
 
-# NEXT: pop card into turned cards -- river
+flop = flop + [deck.pop()]
+
+print(flop)
 
 # NEXT: SCORE HAND !!! - big task
 
