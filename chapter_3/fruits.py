@@ -17,3 +17,9 @@ if 'pears' not in fruits:
     fruits['pears'] = 0
 
 print(fruits)
+fruits['pears'] += 1
+print(fruits)
+
+fruits.setdefault('pears', 0)
+fruits['pears'] += 1
+print (fruits)
