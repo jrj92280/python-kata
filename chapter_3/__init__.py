@@ -1,4 +1,5 @@
-fruits = {}
+
+fruits {}
 fruits['apples'] = 10
 fruits
 'apples : 10'
