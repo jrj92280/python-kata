@@ -4,21 +4,33 @@ from collections import defaultdict
 def evaluate_hand(hand):
     card_groups = create_groups(hand)
 
-    high_cards = sorted(hand, key=sort_cards, reverse=True)[0:5]
+    sorted_cards = sorted(hand, key=sort_cards, reverse=True)
+
+    high_cards = sorted_cards[0:5]
     pairs = group_cards(2, card_groups, hand)
     three_of_kinds = group_cards(3, card_groups, hand)
     four_of_kind = group_cards(4, card_groups, hand)
-    full_house = []
+    full_house = get_full_house(pairs, three_of_kinds)
 
-    if len(pairs) and len(three_of_kinds):
-        full_house.extend(three_of_kinds[0])
-        # ps
-        pairs_index = 0
-        if len(pairs) == 2 and get_card_value(pairs[0][0]) < get_card_value(pairs[1][0]):
-            pairs_index = 1
-        full_house.extend(pairs[pairs_index])
+    straight = []
+    last_card_value = None
 
-    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house]
+    for card in sorted_cards:
+        card_value = get_card_value(card)
+
+        if not last_card_value or card_value + 1 == last_card_value:
+            last_card_value = card_value
+            straight.append(card)
+            continue
+
+    if len(straight) < 5:
+        straight = []
+    else:
+        straight = straight[0:5]
+
+    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house, straight]
+
+
 
 
 def create_groups(hand):
@@ -49,3 +61,15 @@ def sort_cards(card):
 
 def get_card_value(card):
     return int(card.split(',')[0])
+
+
+def get_full_house(pairs, three_of_kinds):
+    full_house = []
+    if len(pairs) and len(three_of_kinds):
+        full_house.extend(three_of_kinds[0])
+        # ps
+        pairs_index = 0
+        if len(pairs) == 2 and get_card_value(pairs[0][0]) < get_card_value(pairs[1][0]):
+            pairs_index = 1
+        full_house.extend(pairs[pairs_index])
+    return full_house
