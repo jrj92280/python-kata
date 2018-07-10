@@ -1,5 +1,7 @@
 import random
 
+from poker.texas_holdem.evaluate_hand import evaluate_hand
+
 player_names = []
 
 player_count = 2  # int(input("How many players? "))
@@ -74,6 +76,18 @@ flop = flop + [deck.pop()]
 
 print(flop)
 
+player_hand = flop + player_names[0][1]
+
+print("!!!!")
+print("Player name: " + player_names[0][0])
+print("Player hand: " + str(player_hand))
+print(evaluate_hand(player_hand))
+
+player_hand = flop + player_names[1][1]
+print("!!!!")
+print("Player name: " + player_names[1][0])
+print("Player hand: " + str(player_hand))
+print(evaluate_hand(player_hand))
 # NEXT: SCORE HAND !!! - big task
 
 
