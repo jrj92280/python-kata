@@ -107,10 +107,11 @@ def test_straight_with_inner_pair():
     assert expected_hand == current_hand[5]
 
 
-def test_straight_with_6():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
+def test_straight_with_7():
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts',
+                     '8,8,hearts']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
+    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '8,8,hearts']
 
     current_hand = evaluate_hand(hand)
 
@@ -118,7 +119,8 @@ def test_straight_with_6():
 
 
 def test_flush():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts',
+                     '2,2,hearts']
 
     hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
 

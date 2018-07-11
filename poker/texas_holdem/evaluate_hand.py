@@ -21,7 +21,7 @@ def evaluate_hand(hand):
         suits[suit].append(card)
     for suit, cards in suits.items():
         if len(cards) >= 5:
-            flush = cards[0:5]
+            flush = cards
 
     return [high_cards, pairs, three_of_kinds, four_of_kind, full_house, straight, flush]
 
@@ -39,7 +39,7 @@ def get_straight(sorted_cards):
     if len(straight) < 5:
         straight = []
     else:
-        straight = straight[0:5]
+        straight = straight
     return straight
 
 
