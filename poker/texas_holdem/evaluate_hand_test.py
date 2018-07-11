@@ -22,7 +22,8 @@ def test_high_cards():
 
 
 def test_high_cards_two():
-    expected_hand = [['13,K,hearts', '12,Q,clubs', '11,J,spades', '10,10,diamonds', '6,6,spades'], [], [], [], [], []]
+    expected_hand = [['13,K,hearts', '12,Q,clubs', '11,J,spades', '10,10,diamonds', '6,6,spades'], [], [], [], [], [],
+                     []]
 
     hand = ['11,J,spades', '12,Q,clubs', '13,K,hearts', '10,10,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
 
@@ -107,10 +108,20 @@ def test_straight_with_inner_pair():
 
 
 def test_straight_with_6():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
+    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
 
     current_hand = evaluate_hand(hand)
 
     assert expected_hand == current_hand[5]
+
+
+def test_flush():
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
+
+    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
+
+    current_hand = evaluate_hand(hand)
+
+    assert expected_hand == current_hand[6]

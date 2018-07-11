@@ -11,10 +11,24 @@ def evaluate_hand(hand):
     three_of_kinds = group_cards(3, card_groups, hand)
     four_of_kind = group_cards(4, card_groups, hand)
     full_house = get_full_house(pairs, three_of_kinds)
+    straight = get_straight(sorted_cards)
 
+    flush = []
+    suits = defaultdict(list)
+
+    for card in sorted_cards:
+        suit = get_suit_value(card)
+        suits[suit].append(card)
+    for suit, cards in suits.items():
+        if len(cards) >= 5:
+            flush = cards[0:5]
+
+    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house, straight, flush]
+
+
+def get_straight(sorted_cards):
     straight = []
     last_card_value = None
-
     for card in sorted_cards:
         card_value = get_card_value(card)
 
@@ -22,15 +36,11 @@ def evaluate_hand(hand):
             last_card_value = card_value
             straight.append(card)
             continue
-
     if len(straight) < 5:
         straight = []
     else:
         straight = straight[0:5]
-
-    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house, straight]
-
-
+    return straight
 
 
 def create_groups(hand):
@@ -61,6 +71,10 @@ def sort_cards(card):
 
 def get_card_value(card):
     return int(card.split(',')[0])
+
+
+def get_suit_value(card):
+    return card.split(',')[2]
 
 
 def get_full_house(pairs, three_of_kinds):
