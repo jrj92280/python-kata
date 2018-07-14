@@ -88,9 +88,9 @@ def test_full_house_with_two_pairs():
 
 
 def test_straight():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts', '4,4,hearts', '2,2,hearts']
+    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '4,4,hearts', '2,2,hearts']
 
     current_hand = evaluate_hand(hand)
 
@@ -98,9 +98,9 @@ def test_straight():
 
 
 def test_straight_with_inner_pair():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,hearts,Q', '11,J,hearts', '10,10,hearts', '4,4,hearts', '13,K,clubs']
+    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '4,4,hearts', '13,K,clubs']
 
     current_hand = evaluate_hand(hand)
 
@@ -127,3 +127,13 @@ def test_flush():
     current_hand = evaluate_hand(hand)
 
     assert expected_hand == current_hand[6]
+
+
+def test_ace_low_straight():
+    expected_hand = ['5,5,hearts', '4,4,hearts', '3,3,hearts', '2,2,hearts', '14,A,hearts']
+
+    hand = ['8,8,clubs', '9,9,spades', '14,A,hearts', '2,2,hearts', '3,3,hearts', '4,4,hearts', '5,5,hearts']
+
+    current_hand = evaluate_hand(hand)
+
+    assert expected_hand == current_hand[5]

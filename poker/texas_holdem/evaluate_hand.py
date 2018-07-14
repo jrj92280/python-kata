@@ -29,17 +29,24 @@ def evaluate_hand(hand):
 def get_straight(sorted_cards):
     straight = []
     last_card_value = None
+    ace_card = None
+
     for card in sorted_cards:
         card_value = get_card_value(card)
+        if card_value == 14:
+            ace_card = card
 
         if not last_card_value or card_value + 1 == last_card_value:
             last_card_value = card_value
             straight.append(card)
-            continue
-    if len(straight) < 5:
+        elif card_value != last_card_value and len(straight) < 4:
+            last_card_value = card_value
+            straight = [card]
+    if len(straight) == 4 and ace_card and get_card_value(straight[3]) == 2:
+        straight.append(ace_card)
+    elif len(straight) < 5:
         straight = []
-    else:
-        straight = straight
+
     return straight
 
 
