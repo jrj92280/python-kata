@@ -36,12 +36,15 @@ def get_straight(sorted_cards):
         if card_value == 14:
             ace_card = card
 
-        if not last_card_value or card_value + 1 == last_card_value:
-            last_card_value = card_value
+        if card_value + 1 == last_card_value:
             straight.append(card)
         elif card_value != last_card_value and len(straight) < 4:
-            last_card_value = card_value
             straight = [card]
+        else:
+            continue
+
+        last_card_value = card_value
+
     if len(straight) == 4 and ace_card and get_card_value(straight[3]) == 2:
         straight.append(ace_card)
     elif len(straight) < 5:
