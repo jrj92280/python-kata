@@ -1,11 +1,8 @@
 
 def add(x, y):
-     X = int(input('enter number to add: '))
-     y = int(input('enter number to add: '))
+     return print(x+y)
+add(4,5)
+add(-4,3)
 
-add(3,5)
-
-if add:
-    print  (sum.add)
 
 
