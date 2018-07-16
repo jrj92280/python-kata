@@ -4,21 +4,53 @@ from collections import defaultdict
 def evaluate_hand(hand):
     card_groups = create_groups(hand)
 
-    high_cards = sorted(hand, key=sort_cards, reverse=True)[0:5]
+    sorted_cards = sorted(hand, key=sort_cards, reverse=True)
+
+    high_cards = sorted_cards[0:5]
     pairs = group_cards(2, card_groups, hand)
     three_of_kinds = group_cards(3, card_groups, hand)
     four_of_kind = group_cards(4, card_groups, hand)
-    full_house = []
+    full_house = get_full_house(pairs, three_of_kinds)
+    straight = get_straight(sorted_cards)
 
-    if len(pairs) and len(three_of_kinds):
-        full_house.extend(three_of_kinds[0])
-        # ps
-        pairs_index = 0
-        if len(pairs) == 2 and get_card_value(pairs[0][0]) < get_card_value(pairs[1][0]):
-            pairs_index = 1
-        full_house.extend(pairs[pairs_index])
+    flush = []
+    suits = defaultdict(list)
 
-    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house]
+    for card in sorted_cards:
+        suit = get_suit_value(card)
+        suits[suit].append(card)
+    for suit, cards in suits.items():
+        if len(cards) >= 5:
+            flush = cards
+
+    return [high_cards, pairs, three_of_kinds, four_of_kind, full_house, straight, flush]
+
+
+def get_straight(sorted_cards):
+    straight = []
+    last_card_value = None
+    ace_card = None
+
+    for card in sorted_cards:
+        card_value = get_card_value(card)
+        if card_value == 14:
+            ace_card = card
+
+        if card_value + 1 == last_card_value:
+            straight.append(card)
+        elif card_value != last_card_value and len(straight) < 4:
+            straight = [card]
+        else:
+            continue
+
+        last_card_value = card_value
+
+    if len(straight) == 4 and ace_card and get_card_value(straight[3]) == 2:
+        straight.append(ace_card)
+    elif len(straight) < 5:
+        straight = []
+
+    return straight
 
 
 def create_groups(hand):
@@ -49,3 +81,19 @@ def sort_cards(card):
 
 def get_card_value(card):
     return int(card.split(',')[0])
+
+
+def get_suit_value(card):
+    return card.split(',')[2]
+
+
+def get_full_house(pairs, three_of_kinds):
+    full_house = []
+    if len(pairs) and len(three_of_kinds):
+        full_house.extend(three_of_kinds[0])
+        # ps
+        pairs_index = 0
+        if len(pairs) == 2 and get_card_value(pairs[0][0]) < get_card_value(pairs[1][0]):
+            pairs_index = 1
+        full_house.extend(pairs[pairs_index])
+    return full_house
