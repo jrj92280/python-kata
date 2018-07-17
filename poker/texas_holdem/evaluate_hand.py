@@ -80,11 +80,11 @@ def sort_cards(card):
 
 
 def get_card_value(card):
-    return int(card.split(',')[0])
+    return int(card[1:])
 
 
 def get_suit_value(card):
-    return card.split(',')[2]
+    return card[0]
 
 
 def get_full_house(pairs, three_of_kinds):

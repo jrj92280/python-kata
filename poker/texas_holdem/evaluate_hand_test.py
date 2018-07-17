@@ -2,7 +2,7 @@ from poker.texas_holdem.evaluate_hand import evaluate_hand
 
 
 def test_hand_has_7_cards():
-    hand = ['14,A,spades', '14,A,clubs', '14,A,hearts', '14,A,diamonds', '2,2,spades', '3,3,hearts', '4,4,spades']
+    hand = ['S14', 'C14', 'H14', 'D14', 'S2', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -10,9 +10,9 @@ def test_hand_has_7_cards():
 
 
 def test_high_cards():
-    expected_hand = ['14,A,clubs', '14,A,diamonds', '14,A,hearts', '14,A,spades', '4,4,spades']
+    expected_hand = ['C14', 'D14', 'H14', 'S14', 'S4']
 
-    hand = ['14,A,spades', '14,A,clubs', '14,A,hearts', '14,A,diamonds', '2,2,spades', '3,3,hearts', '4,4,spades']
+    hand = ['S14', 'C14', 'H14', 'D14', 'S2', 'H3', 'S4']
     current_hand = evaluate_hand(hand)
 
     _expected_hand = set(expected_hand)
@@ -22,10 +22,10 @@ def test_high_cards():
 
 
 def test_high_cards_two():
-    expected_hand = [['13,K,hearts', '12,Q,clubs', '11,J,spades', '10,10,diamonds', '6,6,spades'], [], [], [], [], [],
+    expected_hand = [['H13', 'C12', 'S11', 'D10', 'S6'], [], [], [], [], [],
                      []]
 
-    hand = ['11,J,spades', '12,Q,clubs', '13,K,hearts', '10,10,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
+    hand = ['S11', 'C12', 'H13', 'D10', 'S6', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -34,9 +34,9 @@ def test_high_cards_two():
 
 def test_one_pair():
     expected_hand = (
-    ['13,K,hearts', '13,K,clubs', '11,J,spades', '10,10,diamonds', '6,6,spades'], [['13,K,hearts', '13,K,clubs']])
+        ['H13', 'C13', 'S11', 'D10', 'S6'], [['H13', 'C13']])
 
-    hand = ['11,J,spades', '13,K,hearts', '13,K,clubs', '10,10,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
+    hand = ['S11', 'H13', 'C13', 'D10', 'S6', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -48,9 +48,9 @@ def test_one_pair():
 
 
 def test_one_three_of_kind():
-    expected_hand = [['13,K,hearts', '13,K,clubs', '13,K,spades']]
+    expected_hand = [['H13', 'C13', 'S13']]
 
-    hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '10,10,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
+    hand = ['H13', 'C13', 'S13', 'D10', 'S6', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -58,9 +58,9 @@ def test_one_three_of_kind():
 
 
 def test_four_of_kind():
-    expected_hand = [['13,K,hearts', '13,K,clubs', '13,K,spades', '13,K,diamonds']]
+    expected_hand = [['H13', 'C13', 'S13', 'D13']]
 
-    hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '13,K,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
+    hand = ['H13', 'C13', 'S13', 'D13', 'S6', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -68,9 +68,9 @@ def test_four_of_kind():
 
 
 def test_full_house():
-    expected_hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '6,6,diamonds', '6,6,spades']
+    expected_hand = ['H13', 'C13', 'S13', 'D6', 'S6']
 
-    hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '6,6,diamonds', '6,6,spades', '3,3,hearts', '4,4,spades']
+    hand = ['H13', 'C13', 'S13', 'D6', 'S6', 'H3', 'S4']
 
     current_hand = evaluate_hand(hand)
 
@@ -78,9 +78,9 @@ def test_full_house():
 
 
 def test_full_house_with_two_pairs():
-    expected_hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '6,6,diamonds', '6,6,spades']
+    expected_hand = ['H13', 'C13', 'S13', 'D6', 'S6']
 
-    hand = ['13,K,hearts', '13,K,clubs', '13,K,spades', '4,4,hearts', '4,4,spades', '6,6,diamonds', '6,6,spades']
+    hand = ['H13', 'C13', 'S13', 'H4', 'S4', 'D6', 'S6']
 
     current_hand = evaluate_hand(hand)
 
@@ -88,9 +88,9 @@ def test_full_house_with_two_pairs():
 
 
 def test_straight():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['H14', 'H13', 'H12', 'H11', 'H10']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '4,4,hearts', '2,2,hearts']
+    hand = ['H13', 'H14', 'H12', 'H11', 'H10', 'H4', 'H2']
 
     current_hand = evaluate_hand(hand)
 
@@ -98,9 +98,9 @@ def test_straight():
 
 
 def test_straight_with_inner_pair():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts']
+    expected_hand = ['H14', 'H13', 'H12', 'H11', 'H10']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '4,4,hearts', '13,K,clubs']
+    hand = ['H13', 'H14', 'H12', 'H11', 'H10', 'H4', 'C13']
 
     current_hand = evaluate_hand(hand)
 
@@ -108,10 +108,9 @@ def test_straight_with_inner_pair():
 
 
 def test_straight_with_7():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts',
-                     '8,8,hearts']
+    expected_hand = ['H14', 'H13', 'H12', 'H11', 'H10', 'H9', 'H8']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '8,8,hearts']
+    hand = ['H13', 'H14', 'H12', 'H11', 'H10', 'H9', 'H8']
 
     current_hand = evaluate_hand(hand)
 
@@ -119,10 +118,9 @@ def test_straight_with_7():
 
 
 def test_flush():
-    expected_hand = ['14,A,hearts', '13,K,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts',
-                     '2,2,hearts']
+    expected_hand = ['H14', 'H13', 'H12', 'H11', 'H10', 'H9', 'H2']
 
-    hand = ['13,K,hearts', '14,A,hearts', '12,Q,hearts', '11,J,hearts', '10,10,hearts', '9,9,hearts', '2,2,hearts']
+    hand = ['H13', 'H14', 'H12', 'H11', 'H10', 'H9', 'H2']
 
     current_hand = evaluate_hand(hand)
 
@@ -130,9 +128,9 @@ def test_flush():
 
 
 def test_ace_low_straight():
-    expected_hand = ['5,5,hearts', '4,4,hearts', '3,3,hearts', '2,2,hearts', '14,A,hearts']
+    expected_hand = ['H5', 'H4', 'H3', 'H2', 'H14']
 
-    hand = ['8,8,clubs', '9,9,spades', '14,A,hearts', '2,2,hearts', '3,3,hearts', '4,4,hearts', '5,5,hearts']
+    hand = ['C8', 'S9', 'H14', 'H2', 'H3', 'H4', 'H5']
 
     current_hand = evaluate_hand(hand)
 
