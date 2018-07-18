@@ -1,18 +1,16 @@
 
 def opperation(x, y, op):
+    if op == '+':
+        return x + y
 
-        return opperation
-add = (3, 5, '+')
-assert 8 == opperation(add)
+    return opperation
 
-sub = (3, 5, '-')
-assert -2 == opperation(sub)
+assert 8 == opperation(3,5 ,'+')
 
-multi = (6, 2, '*')
-assert 12 == opperation(multi)
 
-div = (6, 2, '/')
-assert 3 == opperation(add)
+
+
+
 
 
 
