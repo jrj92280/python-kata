@@ -26,5 +26,4 @@ def display_card(card):
     if card_value == '14':
         card_value = 'A'
 
-
     return card_value + suit
