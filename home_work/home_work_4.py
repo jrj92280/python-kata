@@ -5,8 +5,11 @@ def nation_total(y):
     t = 0
     y = t*(t + 1)/2
     t += y
-    return(y)
+    return nation_total
 
+
+if x in t(y):
+    print(nation_total())
 
 
 
