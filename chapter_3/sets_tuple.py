@@ -12,3 +12,6 @@ d = vowels.difference(set(word))
 print (d)
 i = vowels.intersection(set(word))
 print (i)
+found = vowels.intersection((set(word)))
+for vowel in found:
+    print(vowel)
