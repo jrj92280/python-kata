@@ -2,6 +2,7 @@ import random
 
 from poker.texas_holdem.display_card import display_card
 from poker.texas_holdem.evaluate_hand import evaluate_hand
+from poker.texas_holdem.score_hand import score_hand
 
 
 def print_hand(cards):
@@ -82,10 +83,17 @@ print_hand(flop)
 
 # bets
 
+hands = []
+
 for player in player_names:
     player_hand = player[1] + flop
     print("Player name: " + player[0])
     print_hand(player_hand)
-    print(evaluate_hand(player_hand))
 
+    eval_hand = evaluate_hand(player_hand)
+    print(eval_hand)
+    hands.append(eval_hand)
+
+print("!!!!!")
+print(score_hand(hands[0], hands[1]))
 # put cards back into the deck

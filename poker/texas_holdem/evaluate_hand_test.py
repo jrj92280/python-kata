@@ -22,8 +22,7 @@ def test_high_cards():
 
 
 def test_high_cards_two():
-    expected_hand = [['H13', 'C12', 'S11', 'D10', 'S6'], [], [], [], [], [],
-                     []]
+    expected_hand = [['H13', 'C12', 'S11', 'D10', 'S6'], [], [], [], [], [], []]
 
     hand = ['S11', 'C12', 'H13', 'D10', 'S6', 'H3', 'S4']
 
