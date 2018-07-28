@@ -18,4 +18,6 @@ people['Robot'] = { 'Name': 'Marvin',
                     'Gender': 'Unknown',
                     'Occupation': 'Paranoid Android',
                      'Home Planet': 'Unknown' }
-print(people)
+import pprint
+pprint.pprint(people)
+print(people['Arthur']['Occupation'])
