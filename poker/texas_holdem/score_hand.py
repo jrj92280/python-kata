@@ -4,6 +4,17 @@ def score_hand(player_one, player_two):
 
     player_one_high_cards = player_one[0]
     player_two_high_cards = player_two[0]
+    player_one_pairs = player_one[1]
+    player_two_pairs = player_two[1]
+
+    lp1p = len(player_one_pairs)
+    lp2p = len(player_two_pairs)
+
+    if lp1p > lp2p:
+        return 1
+    elif lp1p < lp2p:
+        return -1
+
 
     for player_one_card, player_two_card in zip(player_one_high_cards, player_two_high_cards):
         player_one_card_value = get_card_value(player_one_card)
