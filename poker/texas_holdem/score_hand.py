@@ -1,31 +1,19 @@
-from poker.texas_holdem.evaluate_hand import get_card_value
-
 def score_hand(player_one, player_two):
     if len(player_one) != 7 or len(player_two) != 7:
         raise RuntimeError('invalid hands')
 
-    player_one_high_cards = player_one[0]
-    player_two_high_cards = player_two[0]
     player_one_pairs = player_one[1]
     player_two_pairs = player_two[1]
 
-    lp1p = len(player_one_pairs)
-    lp2p = len(player_two_pairs)
+    length_player_one_pairs = len(player_one_pairs)
+    length_player_two_pairs = len(player_two_pairs)
 
-    if lp1p != 0 and lp2p == 0:
+    if length_player_one_pairs != 0 and length_player_two_pairs == 0:
         return 1
-    elif lp1p == 0 and lp2p != 0:
+    elif length_player_one_pairs == 0 and length_player_two_pairs != 0:
         return -1
-    elif lp1p != 0 and lp2p != 0:
-        print("We have a pair")
-
-        while lp1p != lp2p:
-            if lp1p > lp2p:
-                player_two_pairs.append([])
-                lp2p += 1
-            else:
-                player_one_pairs.append([])
-                lp1p += 1
+    elif length_player_one_pairs != 0 and length_player_two_pairs != 0:
+        make_list_same_size(player_one_pairs, player_two_pairs)
 
         p1h = None
         p2h = None
@@ -51,6 +39,8 @@ def score_hand(player_one, player_two):
         elif p1h < p2h:
             return -1
 
+    player_one_high_cards = player_one[0]
+    player_two_high_cards = player_two[0]
 
     for player_one_card, player_two_card in zip(player_one_high_cards, player_two_high_cards):
         player_one_card_value = get_card_value(player_one_card)
@@ -64,6 +54,19 @@ def score_hand(player_one, player_two):
             return -1
 
     return 0
+
+
+def make_list_same_size(list_one: list, list_two: list) -> None:
+    length_list_one = len(list_one)
+    length_list_two = len(list_two)
+
+    while length_list_one != length_list_two:
+        if length_list_one > length_list_two:
+            list_two.append([])
+            length_list_two += 1
+        else:
+            list_one.append([])
+            length_list_one += 1
 
 
 def get_card_value(card):
