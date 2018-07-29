@@ -19,7 +19,7 @@ def test_pair():
     assert 0 == score_hand(player_one_hand, player_one_hand)
 
 
-def test_pair():
+def test_pair_with_comparison():
     player_one_hand = [[], [['C12', 'S12']], [], [], [], [], []]
     player_two_hand = [[], [['S2', 'C2'], ['S3', 'C3']], [], [], [], [], []]
 
