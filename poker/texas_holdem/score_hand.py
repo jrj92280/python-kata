@@ -1,18 +1,18 @@
-def score_hand(player_one, player_two):
+def score_hand(player_one: list, player_two: list):
     if len(player_one) != 7 or len(player_two) != 7:
         raise RuntimeError('invalid hands')
 
     player_one_pairs = player_one[1]
     player_two_pairs = player_two[1]
 
-    length_player_one_pairs = len(player_one_pairs)
-    length_player_two_pairs = len(player_two_pairs)
+    player_one_has_pairs = len(player_one_pairs)
+    player_two_has_pairs = len(player_two_pairs)
 
-    if length_player_one_pairs != 0 and length_player_two_pairs == 0:
+    if player_one_has_pairs and not player_two_has_pairs:
         return 1
-    elif length_player_one_pairs == 0 and length_player_two_pairs != 0:
+    elif not player_one_has_pairs and player_two_has_pairs:
         return -1
-    elif length_player_one_pairs != 0 and length_player_two_pairs != 0:
+    elif player_one_has_pairs and player_two_has_pairs:
         make_list_same_size(player_one_pairs, player_two_pairs)
 
         p1h = None
