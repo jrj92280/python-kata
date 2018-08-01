@@ -6,6 +6,4 @@ def search4vowels(word):
 
 print(search4vowels('hitch-hiker'))
 
-if True:
-    print(search4vowels)
-
+print(search4vowels('sky'))
