@@ -5,3 +5,7 @@ def search4vowels(word):
     return bool(found)
 
 print(search4vowels('hitch-hiker'))
+
+if True:
+    print(search4vowels)
+
