@@ -24,5 +24,16 @@ d = {'first': 1, 'second': 2, 'third': 3}
 print(d)
 
 '''set'''
+
 s = set()
 print(s)
+s = {1, 2, 3}
+print(s)
+
+'''tuple'''
+
+t = tuple()
+print(t)
+t = (1, 2, 3)
+print(t)
+
