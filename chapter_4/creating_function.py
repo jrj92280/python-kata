@@ -1,10 +1,10 @@
 def search4vowels(word):
-    """"Display any vowels found in an asked - for word."""
+    """"Return any vowels found in a supplied word."""
     vowels = set('aeiou')
     found = vowels.intersection(set(word))
-    return bool(found)
+    return found
 
 print(search4vowels('hitch-hiker'))
 
 print(search4vowels('sky'))
-print(search4vowels('sky', 'help', 'my'))
+print(search4vowels('galaxy'))
