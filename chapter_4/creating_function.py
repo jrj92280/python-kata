@@ -7,3 +7,4 @@ def search4vowels(word):
 print(search4vowels('hitch-hiker'))
 
 print(search4vowels('sky'))
+print(search4vowels('sky', 'help', 'my'))
