@@ -38,9 +38,10 @@ def search4vowels(pharse :str) -> set:
 # print(t)
 #
 
-def search4letters(pharse : str, letters: str) -> set:
+def search4letters(pharse : str, letters : str) -> set:
     """"Return any letters found in a supplied word."""
-    return set(letters).intersection(set(pharse))
+    letters = str >= 2
+    return letters
 
 
 print(search4letters('hitch-hiker'))
