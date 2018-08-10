@@ -1,8 +1,8 @@
-# def search4vowels(pharse :str) -> set:
-#     """"Return any vowels found in a supplied word."""
-#     vowels = set('aeiou')
-#     return vowels.intersection(set(pharse))
-#
+def search4vowels(pharse :str) -> set:
+    """"Return any vowels found in a supplied word."""
+    vowels = set('aeiou')
+    return vowels.intersection(set(pharse))
+
 #
 # print(search4vowels('hitch-hiker'))
 # print(search4vowels('life, the universe and everything'))
@@ -38,10 +38,9 @@
 # print(t)
 #
 
-def search4letters(pharse :str) -> set:
+def search4letters(pharse : str, letters: str) -> set:
     """"Return any letters found in a supplied word."""
-    letters = set('aeiou')
-    return letters.intersection(set(pharse))
+    return set(letters).intersection(set(pharse))
 
 
 print(search4letters('hitch-hiker'))
