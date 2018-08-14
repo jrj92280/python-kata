@@ -4,5 +4,14 @@ class Bowling:
         self.score = 0
 
     def calculate_score(self):
-        if '1' in self.rolls:
-            self.score = 1
+        frames = self.rolls.split(' ')
+
+        for frame in frames:
+            try:
+                self.score += int(frame[0])
+            except Exception:
+                pass
+            try:
+                self.score += int(frame[1])
+            except Exception:
+                pass
