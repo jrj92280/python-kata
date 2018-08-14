@@ -2,4 +2,6 @@ from bowling.bowling import Bowling
 
 
 def test_zero():
-    bowling = Bowling()
+    rolls = '-- -- -- -- -- -- -- -- -- --'
+    bowling = Bowling(rolls)
+    bowling.calculate_score()
