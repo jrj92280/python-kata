@@ -42,7 +42,11 @@ def search4vowels(pharse :str) -> set:
 def search4letters(pharse: str) -> set:
     """"Return any letters found in a supplied word."""
     letter = set(string.ascii_letters)
-    return letter.intersection(set(pharse))
+    return_value = sorted(letter.intersection(set(pharse)))
+    return return_value
+
+
+
 
 
 
