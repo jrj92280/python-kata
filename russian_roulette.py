@@ -1,6 +1,17 @@
+from random import shuffle
 class Gun:
     def __init__(self, capacity: int):
         self.capacity = capacity
+        self.chambers = [None for _ in range(capacity)]
+
+    def load(self, bullet: str):
+        for index, chamber in enumerate(self.chambers):
+            if not chamber:
+                self.chambers[index] = bullet
+                break
+
+    def shuffle(self):
+        shuffle(self.chambers)
 
 
 class Player:
@@ -11,5 +22,11 @@ class Player:
         pass
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     player = Player()
+
+    gun = Gun(6)
+    gun.load("bullet")
+    print(gun.chambers)
+    gun.shuffle()
+    print(gun.chambers)
