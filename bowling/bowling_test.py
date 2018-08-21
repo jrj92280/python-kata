@@ -1,3 +1,5 @@
+import pytest
+
 from bowling.bowling import score_game
 
 
@@ -53,5 +55,37 @@ def test_score_spare_x():
 
     assert score == 30
 
+def test_score_bad_frames():
+    bad_scenarios = []
+
+    turns = frames()
+
+    bad_scenarios.append(turns + '-')  # three rolls
+    bad_scenarios.append('7')  # one roll one frame
+    bad_scenarios.append(turns[3:])  # 9 frames
+    bad_scenarios.append(turns[:-2] + "X X X X")
+    bad_scenarios.append(turns[:-2] + "X X 9-")
+    bad_scenarios.append(turns[:-2] + "X 9/ X")
+    bad_scenarios.append("-X" + turns[2:])
+    bad_scenarios.append("/1" + turns[2:])
+    bad_scenarios.append("a1" + turns[2:])
+    bad_scenarios.append("1a" + turns[2:])
+
+    for bad_scenario in bad_scenarios:
+        with pytest.raises(AssertionError):
+            score_game(bad_scenario)
+
+def test_score_boundary_frames():
+    good_scenarios = []
+
+    turns = frames()
+    good_scenarios.append(turns[:-2] + "X --")
+    good_scenarios.append(turns[:-2] + "X X -")
+    good_scenarios.append(turns[:-2] + "X X X")
+    good_scenarios.append(turns[:-2] + "X 8/")
+    good_scenarios.append(turns[:-2] + "8/ X")
+
+    for good_scenario in good_scenarios:
+        score_game(good_scenario)
 
 print(("-- ".join(["" for _ in range(11)])).strip())
