@@ -8,6 +8,9 @@ def search4letters(pharse: str) -> set:
 class search4letters():
     def __call__(self):
         return search4letters
-x = search4letters()
+x = __build_class__(func= search4letters)
+    search4letters = len('')
+    
 
-
+x('ehwohohweoruhohrgohrwouhouwrh')
+print (x)
