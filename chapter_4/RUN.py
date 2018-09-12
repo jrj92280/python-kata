@@ -5,12 +5,7 @@ def search4letters(pharse: str) -> set:
     letter = set(string.ascii_letters)
     return_value = sorted(letter.intersection(set(pharse)))
     return return_value
-class search4letters():
-    def __call__(self):
-        return search4letters
-x = __build_class__(func= search4letters)
-    search4letters = len('')
-    
 
-x('ehwohohweoruhohrgohrwouhouwrh')
-print (x)
+
+search4letters =  print()
+print('dsjljkflsjfowhvoborsbvso ')
