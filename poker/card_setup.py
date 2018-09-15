@@ -18,10 +18,9 @@ player_count = 2  # int(input("How many players? "))
 # for player in range(player_count):
 #     player_name = input('name:')
 #     player_names.append([player_name, []])
-
 player_names.append(["jj", []])
 player_names.append(["jk", []])
-
+# button where ante starts make random
 deck = []
 suits = 'SCHD'
 for suit_index in range(4):
