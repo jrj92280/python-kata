@@ -7,5 +7,5 @@ def search4letters(pharse: str) -> set:
     return return_value
 
 
-search4letters =  print()
-print('dsjljkflsjfowhvoborsbvso ')
+search4letters =  print(search4letters)
+

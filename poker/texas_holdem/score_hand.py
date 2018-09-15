@@ -15,12 +15,19 @@ def score_hand(player_one: list, player_two: list):
         return -1
     elif player_one_has_pairs and player_two_has_pairs:
         make_list_same_size(player_one_pairs, player_two_pairs)
-        player_one_high_value, player_two_high_value = get_high_values(player_one_pairs, player_two_pairs)
+        player_one_pairs, player_two_pairs = get_high_values(player_one_pairs, player_two_pairs)
 
-        if player_one_high_value > player_two_high_value:
-            return 1
-        elif player_one_high_value < player_two_high_value:
-            return -1
+        player_one_pairs = player_one_pairs if len(player_one_pairs) < 3 else player_one_pairs[:2]
+        player_two_pairs = player_two_pairs if len(player_two_pairs) < 3 else player_two_pairs[:2]
+        # get highest two pairs
+
+        if len(player_one_pairs) != len(player_two_pairs):
+            return 1 if len(player_one_pairs) > len(player_two_pairs) else -1
+        for player_one_pair_value, player_two_pair_value in zip(player_one_pairs, player_two_pairs):
+            if player_one_pair_value > player_two_pair_value:
+                return 1
+            elif player_one_pair_value < player_two_pair_value:
+                return -1
 
     # high cards
     player_one_high_cards = player_one[0]
@@ -41,8 +48,8 @@ def score_hand(player_one: list, player_two: list):
 
 
 def get_high_values(player_one_pairs, player_two_pairs):
-    player_one_high_value = None
-    player_two_high_value = None
+    player_one_values = []
+    player_two_values = []
     for player_one_pair, player_two_pair in zip(player_one_pairs, player_two_pairs):
         player_one_has_pairs = len(player_one_pair)
         player_two_has_pairs = len(player_two_pair)
@@ -50,16 +57,15 @@ def get_high_values(player_one_pairs, player_two_pairs):
         player_one_current_value = get_card_value(player_one_pair[0]) if player_one_has_pairs else 0
         player_two_current_value = get_card_value(player_two_pair[0]) if player_two_has_pairs else 0
 
-        player_one_high_value = player_one_high_value or player_one_current_value
-        player_two_high_value = player_two_high_value or player_two_current_value
+        if player_one_current_value:
+            player_one_values.append(player_one_current_value)
+        if player_two_current_value:
+            player_two_values.append(player_two_current_value)
 
-        if player_one_high_value != player_one_current_value:
-            player_one_high_value = player_one_high_value if player_one_high_value > player_one_current_value \
-                else player_one_current_value
-        if player_two_high_value != player_two_current_value:
-            player_two_high_value = player_two_high_value if player_two_high_value > player_two_current_value \
-                else player_two_current_value
-    return player_one_high_value, player_two_high_value
+    player_one_values.sort(reverse=True)
+    player_two_values.sort(reverse=True)
+
+    return player_one_values, player_two_values
 
 
 def make_list_same_size(list_one: list, list_two: list) -> None:
