@@ -3,11 +3,11 @@ word = input('Provide a word to search for vowels: ')
 
 found = {}
 
-#found['a'] = 0
-#found['e'] = 0
-#found['i'] = 0
-#found['o'] = 0
-#found['u'] = 0
+found['a'] = 0
+found['e'] = 0
+found['i'] = 0
+found['o'] = 0
+found['u'] = 0
 
 for letter in word:
     if letter in vowels:
@@ -15,4 +15,5 @@ for letter in word:
 
 for g, c in sorted(found.items()):
     print(g, 'was found', c, 'time(s).')
+
 
