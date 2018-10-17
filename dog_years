@@ -1,0 +1,2 @@
+dogs_name = input('What is your dogs name?')
+dog_age = input('How old is your dog?')
