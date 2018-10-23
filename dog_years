@@ -1,0 +1,9 @@
+dogs_name = input('What is your dogs name?: ')
+dog_age = input('How old is your dog?: ')
+human_age = int(dog_age) * 7
+
+print('Your dog', dogs_name, 'is', human_age, 'in human age')
+
+human_age = input("How old are you?: ")
+dog_age = int(human_age) / 7
+print(f'You are {dog_age:.2f} in dog years!')
