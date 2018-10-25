@@ -17,5 +17,3 @@ def test_cant_move_on_self():
     game_board[6][0] = "bp"
     pawn = Pawn(0, 6, "b", game_board)
     assert False == pawn.move(0, 6)
-
-    print()
