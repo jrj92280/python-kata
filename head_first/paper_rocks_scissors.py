@@ -1,5 +1,5 @@
 import random
 
-chose = random.randint(0, 2)
-
-print(chose)
+random_choice = random.randint(0, 2)
+print('Random choice is', random_choice)
+print(random_choice)
