@@ -8,7 +8,12 @@ elif computer_choice == 1:
 else:
     computer_choice = 'scissors'
 
-user_choice = input('rock, paper or scissors? ')
+while True:
+    user_choice = input('rock, paper or scissors? ').lower()
+    if user_choice in ('rock', 'paper', 'scissors'):
+        break
+    print('invalid choice made')
+
 print('You chose', user_choice, 'and the computer chose', computer_choice)
 
 # choices = ['rock', 'paper', 'scissors']
