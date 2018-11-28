@@ -8,8 +8,9 @@ def largest(i_list):
     return largest
 
 
-my_list = (1, 6, 35)
-assert 35 == largest(my_list)
+#
+# my_list = (1, 6, 35)
+# assert 35 == largest(my_list)
 
 r_list = []
 for _ in range(5):

@@ -8,4 +8,9 @@ elif random_choice == 1:
 else:
     random_choice = 'Scissors'
 
-print('The computer chooses', random_choice)
+user_choice = input('rock, paper or scissors? ')
+print('You chose', user_choice, 'and the computer chose', random_choice)
+
+choices = ['rock', 'paper', 'scissors']
+computer_choice = random.choice(choices)
+print(computer_choice)
