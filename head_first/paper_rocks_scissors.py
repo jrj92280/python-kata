@@ -9,7 +9,7 @@ else:
     computer_choice = 'scissors'
 
 user_choice = input('rock, paper or scissors? ')
-# print('You chose', user_choice, 'and the computer chose', computer_choice)
+print('You chose', user_choice, 'and the computer chose', computer_choice)
 
 # choices = ['rock', 'paper', 'scissors']
 # computer_choice = random.choice(choices)
