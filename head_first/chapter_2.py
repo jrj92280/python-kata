@@ -1,3 +1,5 @@
+import random
+
 # cup1 = 0
 # cup2 = 1
 # cup3 = 0
@@ -30,12 +32,18 @@
 # passcode = passcode + " "
 # passcode = passcode + word6
 # print(passcode)
+#
+# first = ('somewhere')
+# last = ('over the rainbow')
+# print(first, last)
+#
+# temp = first
+# first = last
+# last = temp
+# print(first, last)
 
-first = ('somewhere')
-last = ('over the rainbow')
-print(first, last)
+# page 110
 
-temp = first
-first = last
-last = temp
-print(first, last)
+color = ('blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black')
+
+print(random.randint.color)
