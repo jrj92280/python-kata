@@ -43,7 +43,7 @@ import random
 # print(first, last)
 
 # page 110
+color = ['blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black']
+color_index = random.randint[0, 9]
 
-color = ('blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black')
-
-print(random.randint.color)
+print(color)
