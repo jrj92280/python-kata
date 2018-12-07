@@ -43,8 +43,17 @@ import random
 # print(first, last)
 
 # page 110
-colors = ('blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black')
-choice = list(map(int, colors))
-random.randint(choice)
-print(choice
-      )
+colors = ['blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black', 'cyan', 'moscato']
+
+print({index: color for index, color in enumerate(colors)}[random.randint(0, len(colors) - 1)])
+
+colorsDict = {}
+
+for index, color in enumerate(colors):
+    colorsDict[index] = color
+
+print(colorsDict)
+
+randomColor = random.randint(0, 9)
+
+print(colorsDict[randomColor])
