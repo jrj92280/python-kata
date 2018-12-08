@@ -1,5 +1,3 @@
-import random
-
 # cup1 = 0
 # cup2 = 1
 # cup3 = 0
@@ -43,17 +41,25 @@ import random
 # print(first, last)
 
 # page 110
-colors = ['blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black', 'cyan', 'moscato']
+# colors = ['blue', 'red', 'green', 'purple', 'yellow', 'orange', 'pink', 'brown', 'black', 'cyan', 'moscato']
+#
+# print({index: color for index, color in enumerate(colors)}[random.randint(0, len(colors) - 1)])
+#
+# colorsDict = {}
+#
+# for index, color in enumerate(colors):
+#     colorsDict[index] = color
+#
+# print(colorsDict)
+#
+# randomColor = random.randint(0, 9)
+#
+# print(colorsDict[randomColor])
 
-print({index: color for index, color in enumerate(colors)}[random.randint(0, len(colors) - 1)])
+# page 113 infinite loop counter - 1 is correct way
+counter = 10
 
-colorsDict = {}
-
-for index, color in enumerate(colors):
-    colorsDict[index] = color
-
-print(colorsDict)
-
-randomColor = random.randint(0, 9)
-
-print(colorsDict[randomColor])
+while counter > 0:
+    print('Counter is', counter)
+    counter = counter + 1
+print('Liftoff')
