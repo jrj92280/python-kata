@@ -14,3 +14,12 @@ eighties[0] = eighties[2]
 eighties[2] = remember
 
 print(eighties)
+
+length = len(eighties)
+print(length)
+last = eighties[length - 1]
+print(last)
+second_last = eighties[length - 2]
+print(second_last)
+third_last = eighties[length - 3]
+print((third_last))
