@@ -26,23 +26,23 @@
 
 
 # ///////////The Thing-A-Ma-Jig//////////////// page 133
-#
-# characters = ['t', 'a', 'c', 'o']
-# output = ''
-# length = len(characters)
-# i = 0
-# while (i < length):
-#     output = output + characters[i]
-#     i = i + 1
-#
-# length = length * -1
-# i = -2
-#
-# while (i >= length):
-#     output = output + characters[i]
-#     i = i - 1
-#
-# print(output)
+
+characters = ['t', 'a', 'c', 'o']
+output = ''
+length = len(characters)
+i = 0
+while i < length:
+    output = output + characters[i]
+    i = i + 1
+
+length = length * -1
+i = -2
+
+while i >= length:
+    output = output + characters[i]
+    i = i - 1
+
+print(output)
 
 # ////////////Bubbles-R-Us///////////// page 135
 
@@ -55,5 +55,5 @@ scores = [60, 50, 60, 58, 54, 54,
 i = 0
 length = len(scores)
 while i < length:
-    i = i + 1
     print('Bubble solution #', i, 'score:', scores[i])
+    i = i + 1
