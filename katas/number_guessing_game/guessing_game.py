@@ -30,7 +30,7 @@ while guess != numbers:
     elif guess > numbers:
         print("to high")
     else:
-        print('winner winner chiken dinner!!!!')
+        print('winner winner chicken dinner!!!!')
 
     guesses = guesses + 1
 
