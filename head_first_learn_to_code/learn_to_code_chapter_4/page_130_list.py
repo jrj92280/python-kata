@@ -45,16 +45,16 @@
 
 # ////////////Bubbles-R-Us///////////// page 135
 
-scores = [60, 50, 60, 58, 54, 54,
-          58, 50, 52, 54, 48, 69,
-          34, 55, 51, 52, 44, 51,
-          69, 64, 66, 55, 52, 61,
-          46, 31, 57, 52, 44, 18,
-          41, 53, 55, 61, 51, 44]
-
-length = len(scores)
-for i in range(length):
-    print('Bubble_solution #' + str(i), 'score:', scores[i])
+# scores = [60, 50, 60, 58, 54, 54,
+#           58, 50, 52, 54, 48, 69,
+#           34, 55, 51, 52, 44, 51,
+#           69, 64, 66, 55, 52, 61,
+#           46, 31, 57, 52, 44, 18,
+#           41, 53, 55, 61, 51, 44]
+#
+# length = len(scores)
+# for i in range(length):
+#     print('Bubble_solution #' + str(i), 'score:', scores[i])
 
 # ///////////smoothies//////////  page 142
 
@@ -64,3 +64,15 @@ for i in range(length):
 # for i in range(length):
 #     output = 'We serve ' , i, smoothies[i]
 #     print(output)
+
+# //////// page 150 //////////
+
+smoothies = ['coconut', 'strawberry', 'banana', 'tropical', 'acai berry']
+i = 0
+
+has_coconut = [True, False, False, True, False]
+if has_coconut[i]:
+    while i < len(has_coconut):
+        i = i + 1
+
+        print(smoothies[i], 'contains coconut')
