@@ -25,8 +25,7 @@
 # print((third_last))
 
 
-# ///////////The Thing-A-Ma-Jig//////////////// page 133
-#
+# ///////////The Thing-A-Ma-Jig//////////////// page 133#
 # characters = ['t', 'a', 'c', 'o']
 # output = ''
 # length = len(characters)
@@ -59,7 +58,10 @@
 #     print(bubble_string, 'score:', scores[i])
 #     i = i + 1
 # ///////////smoothies//////////  page 142
-smoothies = ['coconut', ' strawberry', 'banana', 'tropical', 'acai berry']
-for smoothie in smoothies:
-    output = 'We serve ' + smoothie
-    print(output)
+
+#
+# smoothies = ['coconut', 'strawberry', 'banana', 'tropical', 'acai berry']
+# length = len(smoothies)
+# for i in range(length):
+#     output = 'We serve ' , i, smoothies[i]
+#     print(output)
