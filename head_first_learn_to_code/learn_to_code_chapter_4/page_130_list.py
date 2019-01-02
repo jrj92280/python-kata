@@ -69,10 +69,8 @@
 
 smoothies = ['coconut', 'strawberry', 'banana', 'tropical', 'acai berry']
 i = 0
-
-has_coconut = [True, False, False, True, False]
-if has_coconut[i]:
-    while i < len(has_coconut):
-        i = i + 1
-
-        print(smoothies[i], 'contains coconut')
+has_coconut = range(len([0])) == smoothies
+i = i + 1
+print(smoothies[i], 'contains coconut')
+while i < (has_coconut):
+    break
