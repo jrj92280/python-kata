@@ -37,4 +37,4 @@ def get_numeral_value(numeral):
 
 
 if __name__ == '__main__':
-    print(roman_calculator('IV'))
+    print(roman_calculator('LCVM'))
