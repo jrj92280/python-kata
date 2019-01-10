@@ -45,17 +45,21 @@
 
 # ////////////Bubbles-R-Us///////////// page 135
 
-# scores = [60, 50, 60, 58, 54, 54,
-#           58, 50, 52, 54, 48, 69,
-#           34, 55, 51, 52, 44, 51,
-#           69, 64, 66, 55, 52, 61,
-#           46, 31, 57, 52, 44, 18,
-#           41, 53, 55, 61, 51, 44]
-#
-# length = len(scores)
-# for i in range(length):
-#     print('Bubble_solution #' + str(i), 'score:', scores[i])
+scores = [60, 50, 60, 58, 54, 54,
+          58, 50, 52, 54, 48, 69,
+          34, 55, 51, 52, 44, 51,
+          69, 64, 66, 55, 52, 61,
+          46, 31, 57, 52, 44, 18,
+          41, 53, 55, 61, 51, 44]
 
+high_score = scores[0]
+
+length = len(scores)
+for i in range(length):
+    print('Bubble_solution #' + str(i), 'score:', scores[i])
+    if scores[i] > high_score:
+        high_score = scores[i]:
+        print(high_score)
 # ///////////smoothies//////////  page 142
 
 #
@@ -66,11 +70,38 @@
 #     print(output)
 
 # //////// page 150 //////////
+# import random
+#
+# smoothies = ['coconut', 'strawberry', 'banana', 'tropical', 'acai berry']
+#
+# # manual random.choice
+# print("--- manual random")
+# random_flav = smoothies[random.randint(0, len(smoothies) - 1)]
+# print(random_flav)
+#
+# # random.choice
+# print("--- random choice")
+# print(random.choice(smoothies))
+#
+# print("--- smoothie combos!")
+# smoothie_choice = [0, 2] # manually picked combo -- customer order
+#
+# smoothie = '-'.join([smoothies[x] for x in smoothie_choice])
+# print(smoothie)
+#
+# if 'coconut' in smoothie:
+#     print('Yum')
 
-smoothies = ['coconut', 'strawberry', 'banana', 'tropical', 'acai berry']
-i = 0
-has_coconut = range(len([0])) == smoothies
-i = i + 1
-print(smoothies[i], 'contains coconut')
-while i < (has_coconut):
-    break
+# import random
+# [random.randint(0,1) for x in range(5)] #  random has coconut
+#
+# combined_smoothies = []
+# i = 0
+# while i < 5:
+#     combos = random.randint(1,3)
+#     smoothie_combo = "-".join([random.choice(smoothies) for _ in range(combos)])
+#     print(smoothie_combo)
+#     combined_smoothies.append(smoothie_combo)
+#     i = i + 1
+#
+# print(combined_smoothies)
