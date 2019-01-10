@@ -52,13 +52,13 @@ scores = [60, 50, 60, 58, 54, 54,
           46, 31, 57, 52, 44, 18,
           41, 53, 55, 61, 51, 44]
 
-high_score = scores[0]
+high_score = 0
 
 length = len(scores)
 for i in range(length):
     print('Bubble_solution #' + str(i), 'score:', scores[i])
     if scores[i] > high_score:
-        high_score = scores[i]:
+        high_score = scores[i]
         print(high_score)
 # ///////////smoothies//////////  page 142
 
