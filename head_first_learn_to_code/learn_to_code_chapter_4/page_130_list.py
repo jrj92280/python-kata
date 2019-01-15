@@ -59,8 +59,10 @@ for i in range(length):
     print('Bubble_solution #' + str(i), 'score:', scores[i])
     if scores[i] > high_score:
         high_score = scores[i]
+        highest_score_length = range(high_score)
         print('Bubbles test:', length)
         print('Highest bubble score:', high_score)
+        print('Solutions with highest score:', highest_score_length)
 
 # ///////////smoothies//////////  page 142
 
