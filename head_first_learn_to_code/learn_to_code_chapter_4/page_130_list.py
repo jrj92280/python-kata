@@ -44,35 +44,35 @@
 # print(output)
 
 # ////////////Bubbles-R-Us///////////// page 135
-
-scores = [60, 50, 60, 58, 54, 54,
-          58, 50, 52, 54, 48, 69,
-          34, 55, 51, 52, 44, 51,
-          69, 64, 66, 55, 52, 61,
-          46, 31, 57, 52, 44, 18,
-          41, 53, 55, 61, 51, 44]
-
-high_score = 0
-
-high_score_indexes = []
-length = len(scores)
-
-for i in range(length):
-    print('Bubble_solution #' + str(i), 'score:', scores[i])
-
-    if scores[i] >= high_score:
-        if high_score != scores[i]:
-            high_score_indexes = []
-
-        high_score = scores[i]
-        high_score_indexes.append(i)
-
-        print('Bubbles test:', length)
-        print('Highest bubble score:', high_score)
-
-        print('Solution index with highest score:', i)
-
-print('!!!!!! ', high_score_indexes)
+#
+# scores = [60, 50, 60, 58, 54, 54,
+#           58, 50, 52, 54, 48, 69,
+#           34, 55, 51, 52, 44, 51,
+#           69, 64, 66, 55, 52, 61,
+#           46, 31, 57, 52, 44, 18,
+#           41, 53, 55, 61, 51, 44]
+#
+# high_score = 0
+#
+# high_score_indexes = []
+# length = len(scores)
+#
+# for i in range(length):
+#     print('Bubble_solution #' + str(i), 'score:', scores[i])
+#
+#     if scores[i] >= high_score:
+#         if high_score != scores[i]:
+#             high_score_indexes = []
+#
+#         high_score = scores[i]
+#         high_score_indexes.append(i)
+#
+#         print('Bubbles test:', length)
+#         print('Highest bubble score:', high_score)
+#
+#         print('Solution index with highest score:', i)
+#
+# print('!!!!!! ', high_score_indexes)
 # ///////////smoothies//////////  page 142
 
 #
@@ -118,3 +118,8 @@ print('!!!!!! ', high_score_indexes)
 #     i = i + 1
 #
 # print(combined_smoothies)
+# //// page 156 ////
+mystery = ['secret'] * 5
+print(mystery)
+mystery = ' secret' * 5
+print(mystery)
