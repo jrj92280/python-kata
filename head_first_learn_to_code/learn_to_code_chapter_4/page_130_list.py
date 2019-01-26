@@ -119,6 +119,23 @@
 #
 # print(combined_smoothies)
 # //// page 156 ////
+
+menu = []
+menu.append('Burger')
+menu.append('Sushi')
+
+print(menu)
+
+del menu[0]
+print(menu)
+
+menu.extend(['BBQ', 'Tacos'])
+print(menu)
+
+menu.insert(1, 'Stir Fry')
+print(menu)
+
+
 mystery = ['secret'] * 5
 print(mystery)
 mystery = ' secret' * 5
