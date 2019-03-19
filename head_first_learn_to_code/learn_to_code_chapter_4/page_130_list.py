@@ -45,34 +45,51 @@
 
 # ////////////Bubbles-R-Us///////////// page 135
 #
-# scores = [60, 50, 60, 58, 54, 54,
-#           58, 50, 52, 54, 48, 69,
-#           34, 55, 51, 52, 44, 51,
-#           69, 64, 66, 55, 52, 61,
-#           46, 31, 57, 52, 44, 18,
-#           41, 53, 55, 61, 51, 44]
-#
-# high_score = 0
-#
-# high_score_indexes = []
-# length = len(scores)
-#
-# for i in range(length):
-#     print('Bubble_solution #' + str(i), 'score:', scores[i])
-#
-#     if scores[i] >= high_score:
-#         if high_score != scores[i]:
-#             high_score_indexes = []
-#
-#         high_score = scores[i]
-#         high_score_indexes.append(i)
-#
-#         print('Bubbles test:', length)
-#         print('Highest bubble score:', high_score)
-#
-#         print('Solution index with highest score:', i)
-#
-# print('!!!!!! ', high_score_indexes)
+scores = [60, 50, 60, 58, 54, 54,
+          58, 50, 52, 54, 48, 69,
+          34, 55, 51, 52, 44, 51,
+          69, 64, 66, 55, 52, 61,
+          46, 31, 57, 52, 44, 18,
+          41, 53, 55, 61, 51, 44]
+
+costs = [.25, .27, .25, .25, .25, .25,
+         .33, .31, .25, .29, .27, .22,
+         .31, .25, .25, .33, .21, .25,
+         .25, .25, .28, .25, .24, .22,
+         .20, .25, .30, .25, .24, .25,
+         .25, .25, .27, .25, .26, .29]
+
+high_score = 0
+
+length = len(scores)
+
+for i in range(length):
+    print('Bubble_solution #' + str(i), 'score:', scores[i])
+
+    if scores[i] > high_score:
+        if high_score != scores[i]:
+            high_score = scores[i]
+
+        print('Bubbles test:', length)
+        print('Highest bubble score:', high_score)
+
+        print('Solution index with highest score:', i)
+best_solutions = []
+for i in range(length):
+    if high_score == scores[i]:
+        best_solutions.append(i)
+print('Solutions with the highest score: ', best_solutions)
+
+cost = 100.0
+most_effective = 0
+for i in range(length):
+    if scores[i] == high_score and costs[i] < cost:
+        most_effective = i
+        cost = costs[i]
+
+print('Solution', most_effective,
+      'is the most effective with a cost of', costs[most_effective])
+
 # ///////////smoothies//////////  page 142
 
 #
@@ -120,23 +137,23 @@
 # print(combined_smoothies)
 # //// page 156 ////
 
-menu = []
-menu.append('Burger')
-menu.append('Sushi')
-
-print(menu)
-
-del menu[0]
-print(menu)
-
-menu.extend(['BBQ', 'Tacos'])
-print(menu)
-
-menu.insert(1, 'Stir Fry')
-print(menu)
-
-
-mystery = ['secret'] * 5
-print(mystery)
-mystery = ' secret' * 5
-print(mystery)
+# menu = []
+# menu.append('Burger')
+# menu.append('Sushi')
+#
+# print(menu)
+#
+# del menu[0]
+# print(menu)
+#
+# menu.extend(['BBQ', 'Tacos'])
+# print(menu)
+#
+# menu.insert(1, 'Stir Fry')
+# print(menu)
+#
+#
+# mystery = ['secret'] * 5
+# print(mystery)
+# mystery = ' secret' * 5
+# print(mystery)
