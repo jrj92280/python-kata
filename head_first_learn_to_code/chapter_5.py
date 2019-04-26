@@ -42,5 +42,32 @@ def get_bark(weight):
         return 'woof woof'
 
 
-codies_bark = get_bark(40)
-print("Codie's bark", codies_bark)
+# codies_bark = get_bark(40)
+# print("Codie's bark", codies_bark)
+
+def make_greeting(name):
+    return 'Hi ' + name + '!'
+
+
+def compute(x, y):
+    total = x + y
+    if (total > 10):
+        total = 10
+    return total
+
+
+def allow_access(person):
+    if person == 'Dr Evil':
+        answer = True
+    else:
+        answer = False
+    return answer
+
+
+# /// copy in console for answers///
+get_bark(20)
+make_greeting('Speedy')
+compute(2, 3)
+compute(11, 3)
+allow_access('Codie')
+allow_access('Dr Evil')
