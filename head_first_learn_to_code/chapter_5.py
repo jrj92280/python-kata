@@ -21,15 +21,26 @@
 # print("Okay, we're all done")
 
 # ///page 191///
-def how_should_I_get_there(miles):
-    if miles > 120:
-        print('Take a plane')
-    elif miles >= (2):
-        print('Take a car')
+# def how_should_I_get_there(miles):
+#     if miles > 120:
+#         print('Take a plane')
+#     elif miles >= (2):
+#         print('Take a car')
+#     else:
+#         print('Walk')
+#
+#
+# how_should_I_get_there(800.3)
+# how_should_I_get_there(2)
+# how_should_I_get_there(.5)
+
+# ///Page 192///
+def get_bark(weight):
+    if weight > 20:
+        return 'Woof Woof'
     else:
-        print('Walk')
+        return 'woof woof'
 
 
-how_should_I_get_there(800.3)
-how_should_I_get_there(2)
-how_should_I_get_there(.5)
+codies_bark = get_bark(40)
+print("Codie's bark", codies_bark)
