@@ -34,40 +34,14 @@
 # how_should_I_get_there(2)
 # how_should_I_get_there(.5)
 
-# ///Page 192///
-def get_bark(weight):
-    if weight > 20:
-        return 'Woof Woof'
-    else:
-        return 'woof woof'
 
+# // page 201 //
 
-# codies_bark = get_bark(40)
-# print("Codie's bark", codies_bark)
+def drink_me(param):
+    msg = 'Drinking' + param + 'glass'
+    print(msg)
+    param = 'empty'
 
-def make_greeting(name):
-    return 'Hi ' + name + '!'
-
-
-def compute(x, y):
-    total = x + y
-    if (total > 10):
-        total = 10
-    return total
-
-
-def allow_access(person):
-    if person == 'Dr Evil':
-        answer = True
-    else:
-        answer = False
-    return answer
-
-
-# /// copy in console for answers///
-get_bark(20)
-make_greeting('Speedy')
-compute(2, 3)
-compute(11, 3)
-allow_access('Codie')
-allow_access('Dr Evil')
+    glass = 'full'
+    drink_me(glass)
+    print('The glass is', glass)
