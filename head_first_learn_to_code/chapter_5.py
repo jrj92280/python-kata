@@ -37,12 +37,24 @@
 
 # // page 201 //
 
-def drink_me(param):
-    msg = 'Drinking ' + param + ' glass'
-    print(msg)
-    param = 'empty'
+# def drink_me(param):
+#     msg = 'Drinking ' + param + ' glass'
+#     print(msg)
+#     param = 'empty'
+#
+#
+# glass = 'full'
+# drink_me(glass)
+# print('The glass is', glass)
+
+# ///Page 207 ///
+
+greeting = 'Greeetings'
 
 
-glass = 'full'
-drink_me(glass)
-print('The glass is', glass)
+def greet(name, message):
+    global greeting
+    print(greeting, name + '.', message)
+
+
+greet('June', 'See you soon!')
