@@ -48,15 +48,24 @@
 # print('The glass is', glass)
 
 # ///Page 207 ///
+#
+# greeting = 'Greeetings'
+#
+#
+# def greet(name, message):
+#     global greeting
+#     greeting = 'Hi'
+#     print(greeting, name + '.', message)
+#
+#
+# greet('June', 'See you soon!')
+# print(greeting)
 
-greeting = 'Greeetings'
+# ///page 210///
+
+def greet(name, meassage='You rule!'):
+    print('Hi', name + '.', meassage)
 
 
-def greet(name, message):
-    global greeting
-    greeting = 'Hi'
-    print(greeting, name + '.', message)
-
-
-greet('June', 'See you soon!')
-print(greeting)
+greet('John')
+greet('Jennifer', 'How are you today?')
