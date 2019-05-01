@@ -62,10 +62,10 @@
 # print(greeting)
 
 # ///page 210///
+def greet(name, emoticon, message='You rule!'):
+    print('Hi', name + '.', message, emoticon)
 
-def greet(name, meassage='You rule!'):
-    print('Hi', name + '.', meassage)
-
-
-greet('John')
-greet('Jennifer', 'How are you today?')
+#
+# greet(name, emoticons, meassage='You rule!'):
+# greet(message='Where have you been?', name='Jill', emoticons='thumbs up')
+# # greet('Betty', message= 'Yo!', emoticon':)')
