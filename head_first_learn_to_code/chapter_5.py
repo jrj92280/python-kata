@@ -69,3 +69,4 @@ def greet(name, emoticon, message='You rule!'):
 # greet(name, emoticons, meassage='You rule!'):
 # greet(message='Where have you been?', name='Jill', emoticons='thumbs up')
 # # greet('Betty', message= 'Yo!', emoticon':)')
+greet(message='Where have you been?', name='Jill', emoticon='thumbs up')
