@@ -95,7 +95,7 @@ balance = 10500
 camera_on = True
 
 
-def steal(blance, amount):
+def steal(balance, amount):
     global camera_on
     camera_on = False
 
