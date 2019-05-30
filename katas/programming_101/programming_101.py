@@ -92,7 +92,6 @@ print(face_value + ' ' + card)
             4. Cast any non-empty string value to a boolean to output True
             5. Cast the result of 3/2 to a float values to produce an output of 1.5
 """
-
 # -----------------
 # SCOPE
 # -----------------
