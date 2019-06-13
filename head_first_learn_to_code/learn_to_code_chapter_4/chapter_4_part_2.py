@@ -52,6 +52,13 @@ for i in range(len(best_solutions)):
 print('Solution', most_effective,
       'is the most effective with a cost of', costs[most_effective])
 
+top_bubble_solutions = sorted(best_solutions)
+print("Top Bubble Solutions", top_bubble_solutions)
+
+
+
+
+
 # for word in ['ox', 'cat', 'lion', 'tiger', 'bobcat']:
 #     for i in range(2, 7):
 #         letters = len(word)
